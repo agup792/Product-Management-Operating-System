@@ -22,12 +22,14 @@ context/products/
 
 Don't create product folders here by hand — let the skills do it so the blank template is copied consistently:
 
-- **First product:** run `/setup-pm-os` (asks for product name, copies the template, walks through filling `overview.md`).
-- **Additional products:** run `/add-context` and pick "new product" (same flow, no first-time setup steps).
+- **First product:** run `/setup-pm-os` (asks for product name, copies the template, drafts sourced `overview.md`, and can optionally seed selected feature files from PM-named features or qualifying help-doc pages).
+- **Additional products:** run `/add-context` and pick "new product" (same flow, no first-time setup steps). `/add-context product` writes one selected target by default and proposes adjacent feature files as follow-ups unless you opt in.
 
 The blank product template lives at `templates/products/example-product/`. Both skills copy from there into `context/products/<your-slug>/` so each new product starts from a pristine template, never inheriting another product's content.
 
 If you want to peek at the template before running the skills, browse `templates/products/example-product/overview.md` and `example-feature.md`.
+
+When setup offers feature candidates, it shows up to five source-labeled options and creates none unless you select them. Existing feature slugs require overwrite/append/disambiguate confirmation.
 
 ## Linking from projects
 

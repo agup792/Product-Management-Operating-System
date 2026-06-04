@@ -1,6 +1,6 @@
 # templates/products/
 
-Blank product context template. Copied by `/setup-pm-os` (first product) and `/add-context` (new product) into `context/products/<slug>/`.
+Blank product context template. Copied by `/setup-pm-os` (first product) and `/add-context` (new product) into `context/products/<slug>/`. The feature template is also copied when setup or `/add-context feature` seeds a selected feature file.
 
 ## What lives here
 
@@ -11,6 +11,7 @@ Blank product context template. Copied by `/setup-pm-os` (first product) and `/a
 
 - **Don't edit content inside `example-product/`** unless you want to change the structure shipped to all future copies. The skills always copy from here, so any edit propagates to every new product folder created from this point forward.
 - **Customizing the structure:** if your fork wants every product to have an extra section (say, a "Roadmap" block), edit `templates/products/example-product/overview.md` to add it. New products picked up after that change inherit the new structure.
+- **Feature files:** keep `example-feature.md` generic. Setup and `/add-context feature` initialize identity fields after copying, then synthesize sourced sections from selected inputs.
 
 ## Why not in `context/products/`?
 

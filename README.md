@@ -25,9 +25,9 @@ cd pm-os
 
 Open the repo in Claude Code and run:
 
-1. **`/setup-pm-os`** — Interactive walkthrough. Asks for your company name + key facts, your Atlassian/Confluence publishing config, and your first product. Writes `pm-os.config.yml`, updates `context/company/about-company.md`, copies the product template into `context/products/<your-product>/`, and prints a checklist of what's still empty.
-2. **`/add-context company`** — Flesh out `about-company.md` (Mission, ICP, Positioning, Differentiators, Competitors) and `strategy.md` (Market Trends, Strategic Bets, Risks). Accepts URLs, Confluence pages, pasted text, or just conversation.
-3. **`/add-context product`** — Flesh out your product overview (Strategy/Positioning, Unique Approach pillars, Key Capabilities, Target Users, ICP, Product Principles, Key Metrics, Competitive Landscape, Differentiation).
+1. **`/setup-pm-os`** — Interactive walkthrough. Asks for company identity, Atlassian/Confluence publishing config, and first product, then uses your website, web search, setup answers, volunteered sources, competitor sites, help docs, and direct answers to draft company/product context. It can optionally enrich `strategy.md` and seed selected feature files. Writes `pm-os.config.yml`, updates context files after review, copies the product template into `context/products/<your-product>/`, and prints a gap checklist.
+2. **`/add-context company`** — Flesh out `about-company.md` (Mission, ICP, Positioning, Differentiators, Competitors) and `strategy.md` (Market Trends, Strategic Bets, Risks). Accepts URLs, Confluence pages, pasted text, files, or conversation; proactively asks for high-value missing sources and reports sampled/failed/deferred pages.
+3. **`/add-context product`** — Flesh out your product overview (Strategy/Positioning, Unique Approach pillars, Key Capabilities, Target Users, ICP, Product Principles, Key Metrics, Competitive Landscape, Differentiation) from product pages, docs/help sites, competitor sources, pasted material, or direct answers.
 
 You're now ready to run projects. Setup is a one-time exercise — refresh context with `/add-context` whenever something material changes.
 
@@ -59,8 +59,8 @@ Run inside Claude Code (`/<command-name>`). For full operating rules — context
 
 | Command | What it does |
 |---------|--------------|
-| `/setup-pm-os` | First-time setup: company identity, publishing config, first product |
-| `/add-context` | Add or enrich a company / product / feature context doc |
+| `/setup-pm-os` | First-time setup: company identity, publishing config, first product, source-driven context, optional strategy, and selected feature seeding |
+| `/add-context` | Add or enrich one company / product / feature context doc with proactive source asks and bounded crawl reporting |
 | `/start-project <name>` | Scaffold a new project workspace from templates |
 | `/add-input` | File a raw input into `inputs/` with proper frontmatter |
 | `/import-inputs` | Pull relevant existing inputs into a project's `input-references.md` |
@@ -119,7 +119,8 @@ Run inside Claude Code (`/<command-name>`). For full operating rules — context
 │
 ├── pm-os.config.yml             # Publishing defaults (Atlassian domain, Jira key, Confluence space)
 ├── plans/                       # Working plans from plan mode
-├── docs/                        # Publishing-tool docs (Confluence, etc.)
+├── docs/                        # publishing docs plus shared command contracts
+│   └── command-contracts/        # docs/command-contracts/ shared prompt contracts used by slash commands
 └── .claude/commands/            # Project-level Claude Code skills
 ```
 
@@ -128,4 +129,5 @@ Run inside Claude Code (`/<command-name>`). For full operating rules — context
 - [`CLAUDE.md`](./CLAUDE.md) — Operating manual for AI agents working in this repo.
 - [`docs/confluence-publishing.md`](./docs/confluence-publishing.md) — Confluence publishing guide.
 - [`docs/confluence-content-filtering.md`](./docs/confluence-content-filtering.md) — How PRD content is filtered before publishing.
+- [`docs/command-contracts/context-synthesis.md`](./docs/command-contracts/context-synthesis.md) — Shared synthesis contract used by `/setup-pm-os` and `/add-context`.
 - [`inputs/SCHEMA.md`](./inputs/SCHEMA.md) — Canonical frontmatter values for inputs.
