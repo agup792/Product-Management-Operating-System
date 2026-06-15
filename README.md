@@ -25,7 +25,7 @@ cd pm-os
 
 Open the repo in Claude Code and run:
 
-1. **`/setup-pm-os`** — Interactive walkthrough. Asks for company identity, Atlassian/Confluence publishing config, and first product, then uses your website, web search, setup answers, volunteered sources, competitor sites, help docs, and direct answers to draft company/product context. It can optionally enrich `strategy.md` and seed selected feature files. Writes `pm-os.config.yml`, updates context files after review, copies the product template into `context/products/<your-product>/`, and prints a gap checklist.
+1. **`/setup-pm-os`** — Website-first interactive walkthrough. Starts from your company website and volunteered sources, uses web crawl/search to infer company facts and product candidates, asks you to confirm gaps or conflicts, then drafts company/product context. It can optionally enrich `strategy.md`, seed selected feature files, and configure Atlassian/Confluence publishing defaults at the end. Updates context files after review, copies the product template into `context/products/<your-product>/`, writes `pm-os.config.yml` only if you opt into publishing defaults, and prints a gap checklist.
 2. **`/add-context company`** — Flesh out `about-company.md` (Mission, ICP, Positioning, Differentiators, Competitors) and `strategy.md` (Market Trends, Strategic Bets, Risks). Accepts URLs, Confluence pages, pasted text, files, or conversation; proactively asks for high-value missing sources and reports sampled/failed/deferred pages.
 3. **`/add-context product`** — Flesh out your product overview (Strategy/Positioning, Unique Approach pillars, Key Capabilities, Target Users, ICP, Product Principles, Key Metrics, Competitive Landscape, Differentiation) from product pages, docs/help sites, competitor sources, pasted material, or direct answers.
 
@@ -59,7 +59,7 @@ Run inside Claude Code (`/<command-name>`). For full operating rules — context
 
 | Command | What it does |
 |---------|--------------|
-| `/setup-pm-os` | First-time setup: company identity, publishing config, first product, source-driven context, optional strategy, and selected feature seeding |
+| `/setup-pm-os` | Website-first setup: source-backed company facts, first product candidates, company/product context, optional strategy, selected feature seeding, and optional publishing defaults |
 | `/add-context` | Add or enrich one company / product / feature context doc with proactive source asks and bounded crawl reporting |
 | `/start-project <name>` | Scaffold a new project workspace from templates |
 | `/add-input` | File a raw input into `inputs/` with proper frontmatter |

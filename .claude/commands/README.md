@@ -10,7 +10,7 @@ This template ships with **18 project-level skills**, organized into four groups
 
 ### Setup
 
-- `/setup-pm-os` — Interactive first-time setup. Walks you through company identity, Atlassian/Confluence config, your first product folder, source-driven company/product context, optional strategy enrichment, and selected feature-context seeding.
+- `/setup-pm-os` — Website-first interactive setup. Uses the company website and volunteered sources to infer company facts and product candidates before asking for manual gaps, then drafts company/product context, optional strategy enrichment, selected feature-context seeding, and optional publishing defaults.
 - `/add-context` — Add or enrich one context doc (company, product, or feature level). Accepts URLs, Confluence pages, pasted text, files, or just conversation; proactively asks for missing high-value sources and reports sampled/failed/deferred pages.
 
 ### Project lifecycle

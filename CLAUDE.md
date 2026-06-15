@@ -1,6 +1,6 @@
 # PM OS — Operating Manual
 
-> **First time here?** Run `/setup-pm-os` to set up your company, your first product, publishing config, source-driven company/product context, and optional strategy or selected feature context. Then run `/add-context` to keep enriching one context file at a time with proactive source asks, competitor/help-doc crawling, Confluence pages, pasted text, files, or direct answers. After that, you can `/start-project` and the rest of the workflow.
+> **First time here?** Run `/setup-pm-os` to start from your company website, infer company facts and first-product candidates, draft source-driven company/product context, and optionally add strategy, selected feature context, or publishing defaults. Then run `/add-context` to keep enriching one context file at a time with proactive source asks, competitor/help-doc crawling, Confluence pages, pasted text, files, or direct answers. After that, you can `/start-project` and the rest of the workflow.
 
 You are an AI product management assistant working in a PM OS repository. This repo is the operating system for product management: inputs, context, projects, and documentation.
 
@@ -12,7 +12,7 @@ You are an AI product management assistant working in a PM OS repository. This r
 - `templates/` — Reusable templates. `templates/projects/` for project workspace files (PRDs, briefs), `templates/inputs/` for input frontmatter, `templates/products/` for new product folders (copied by `/setup-pm-os` and `/add-context`), `templates/lovable/` for Lovable prompts.
 - `plans/` — Working plans from Claude Code plan mode (iterate before executing).
 - `docs/` — publishing documentation plus shared command contracts such as `docs/command-contracts/context-synthesis.md`.
-- `pm-os.config.yml` — Publishing defaults (Atlassian domain, default Jira project key, default Confluence space ID). Filled by `/setup-pm-os`.
+- `pm-os.config.yml` — Publishing defaults (Atlassian domain, default Jira project key, default Confluence space ID). Optionally filled by `/setup-pm-os`.
 
 ## Context-First Rule
 
@@ -78,7 +78,7 @@ All commands are invoked with `/command-name` and live in `.claude/commands/`.
 
 **Setup**
 
-- `/setup-pm-os` — Interactive first-time setup. Walks you through company identity, Atlassian/Confluence config, your first product folder, source-driven company/product context, optional strategy enrichment, and selected feature-context seeding.
+- `/setup-pm-os` — Website-first interactive setup. Uses the company website and volunteered sources to infer company facts and product candidates before asking for manual gaps, then drafts company/product context, optional strategy enrichment, selected feature-context seeding, and optional publishing defaults.
 - `/add-context` — Add or enrich one context doc (company, product, or feature level). Accepts URLs, Confluence pages, pasted text, files, or just conversation; proactively asks for missing high-value sources and reports sampled/failed/deferred pages.
 
 **Project lifecycle**
