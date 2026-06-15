@@ -4,7 +4,7 @@
 # and /update-on-confluence. PRD frontmatter values (jira.project_key,
 # confluence.space_id, etc.) override these per-PRD when non-empty.
 #
-# Filled by /setup-pm-os. Edit by hand if you ever need to change defaults.
+# Optionally filled by /setup-pm-os. Edit by hand if you ever need to change defaults.
 
 atlassian:
   # Your Atlassian site host — the FULL host including `.atlassian.net`,

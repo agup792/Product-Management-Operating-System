@@ -2,14 +2,16 @@
 
 Project-level Claude Code skills. Each `.md` file in this folder defines one slash-command. Invoke them inside Claude Code with `/<command-name>` (e.g., `/start-project`).
 
+Some commands also depend on shared prompt contracts under `docs/command-contracts/`. For example, `/setup-pm-os` and `/add-context` both read and apply `docs/command-contracts/context-synthesis.md` before synthesizing context. Shared contracts live in `docs/`, not in this slash-command folder.
+
 ## Skills shipped in this template
 
 This template ships with **18 project-level skills**, organized into four groups:
 
 ### Setup
 
-- `/setup-pm-os` — Interactive first-time setup. Walks you through company identity, Atlassian/Confluence config, and your first product folder.
-- `/add-context` — Add or enrich a context doc (company, product, or feature level). Accepts URLs, Confluence pages, pasted text, files, or just conversation.
+- `/setup-pm-os` — Website-first interactive setup. Uses the company website and volunteered sources to infer company facts and product candidates before asking for manual gaps, then drafts company/product context, optional strategy enrichment, selected feature-context seeding, and optional publishing defaults.
+- `/add-context` — Add or enrich one context doc (company, product, or feature level). Accepts URLs, Confluence pages, pasted text, files, or just conversation; proactively asks for missing high-value sources and reports sampled/failed/deferred pages.
 
 ### Project lifecycle
 
@@ -47,5 +49,6 @@ Skills are plain markdown files. Open any `.md` here, edit the instructions, sav
 A few conventions if you fork or extend:
 
 - The filename (minus `.md`) is the slash-command name.
+- Shared command contracts belong under `docs/command-contracts/`; do not put non-command helper docs in this folder.
 - Don't create a `.claude/README.md` — the only other things in `.claude/` are `settings.json` (small, self-evident) and `settings.local.json` (gitignored). This commands folder is where forkers spend their time.
 - If you remove a skill, also remove references to it from `CLAUDE.md`, the top-level `README.md`, and any other skill that mentions it — otherwise agents will tell users to invoke a command that 404s.

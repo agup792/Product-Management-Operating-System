@@ -27,4 +27,6 @@ When something you'd write in an input has stabilized enough to be reused across
 
 ## Filling this in
 
-The repo ships with placeholder files. Replace `[Placeholder]` markers in `company/about-company.md`, `company/strategy.md`, and the example product folder before doing serious AI work — otherwise agent outputs will be generic.
+The repo ships with placeholder files. Run `/setup-pm-os` first: it fills the repo spine, drafts sourced company/product context, and can optionally enrich strategy or seed selected feature files. Use `/add-context` afterward to enrich one file at a time; it can ask for missing high-value sources, crawl bounded website/docs/competitor pages, and report sampled/failed/deferred pages.
+
+Replace remaining `[Placeholder]` markers in `company/about-company.md`, `company/strategy.md`, product overviews, and feature files before doing serious AI work -- otherwise agent outputs will be generic.

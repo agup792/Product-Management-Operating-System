@@ -7,7 +7,9 @@ Cross-product context about your company. Agents read these on most tasks.
 - **`about-company.md`** — Company overview: what you do, who you sell to (ICP), competitors, positioning, product portfolio. This is the single most important context file in the repo. Almost every agent reads it first.
 - **`strategy.md`** — Strategy: market trends you're betting on, multi-year goals, strategic priorities, risks. Used when deciding *what's worth building*, not just *how to build it*.
 
-Both files ship as templates with `[Placeholder]` markers — fill them in before doing serious AI work. If `about-company.md` says "[Company name]" everywhere, the PRDs and brainstorming sessions will be correspondingly vague.
+Both files ship as templates with `[Placeholder]` markers. `/setup-pm-os` drafts `about-company.md` during onboarding and can optionally enrich `strategy.md` after the repo is ready to start projects. `/add-context company` can continue either file later with URLs, Confluence pages, competitor sources, pasted docs, files, or direct answers.
+
+Fill the remaining placeholders before doing serious AI work. If `about-company.md` says "[Company name]" everywhere, the PRDs and brainstorming sessions will be correspondingly vague.
 
 ## Adding more
 
